@@ -1,4 +1,6 @@
 class Queue::Queue
+  attr_accessor :queue
+
   def initialize
     @queue = []
   end
