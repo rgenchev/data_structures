@@ -5,12 +5,16 @@ class QueueTest < Minitest::Test
     @queue = Queue::Queue.new
   end
 
-  def test_should_enqueue_items
-    assert_equal 0, @queue.length
-
+  def test_should_be_able_to_access_queue
     @queue.enqueue(1)
 
-    assert_equal 1, @queue.length
+    assert_equal [1], @queue.queue
+  end
+
+  def test_should_enqueue_items
+    @queue.enqueue(1)
+
+    assert_equal [1], @queue.queue
   end
 
   def test_should_dequeue_items
